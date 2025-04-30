@@ -1,0 +1,22 @@
+version: 1
+frontend:
+    phases:
+        preBuild:
+            commands:
+                - yarn install
+        build:
+            commands:
+                - yarn build
+    artifacts:
+        baseDirectory: .next
+        files:
+            - "**/*"
+    cache:
+        paths:
+            - node_modules/**/*
+environment:
+    variables:
+        NEXTAUTH_SECRET: "fed0498f4326935d5ecac51173662ec5"
+        NEXTAUTH_URL: "https://test.d2shs88mcsoasg.amplifyapp.com"
+        API_URL: "http://localhost:3001"
+        WEBSITE_NAME: "Simpletree"
